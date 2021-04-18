@@ -37,6 +37,7 @@ jobs:
       - name: Build baby Build!
         uses: docker/build-push-action@v2.3.0
         with:
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_REPO }}/${{ github.event.client_payload.repository.name }}:${{ steps.replace.outputs.replaced }}
           platforms: linux/amd64,linux/arm64,linux/arm
